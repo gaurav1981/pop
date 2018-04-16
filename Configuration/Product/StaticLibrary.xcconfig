@@ -7,20 +7,15 @@
 // of patent rights can be found in the PATENTS file in the same directory.
 // 
 
-#include "../Base-iOS.xcconfig"
-
-// Code Signing
-CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Developer
+#include "../Compiler.xcconfig"
 
 // Deployment
 DSTROOT = /tmp/$(TARGET_NAME)
+INSTALL_PATH = $(SYMROOT)/Headers
 SKIP_INSTALL = YES
 
-// Linking
-OTHER_LDFLAGS = -framework SenTestingKit -all_load -lc++
+// declare inlines as extern
+GCC_INLINES_ARE_PRIVATE_EXTERN = YES
 
-// Packaging
-WRAPPER_EXTENSION = octest
-
-// Search Paths
-FRAMEWORK_SEARCH_PATHS = $(SDKROOT)/Developer/Library/Frameworks $(DEVELOPER_FRAMEWORKS_DIR)
+// Use PRODUCT_NAME instead of TARGET_NAME to support multiple targets for different platforms
+PUBLIC_HEADERS_FOLDER_PATH = include/$(PRODUCT_NAME)

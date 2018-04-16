@@ -7,12 +7,8 @@
 // of patent rights can be found in the PATENTS file in the same directory.
 // 
 
-// iOS Platform
-SDKROOT = iphoneos
-IPHONEOS_DEPLOYMENT_TARGET = 6.0
+#include "../Compiler.xcconfig"
 
-// Standard Architectures, including 64-bit
-ARCHS = $(ARCHS_STANDARD_INCLUDING_64_BIT)
-
-// Code Signing
-CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Developer
+// Deployment
+DSTROOT = /tmp/$(TARGET_NAME)
+SKIP_INSTALL = YES

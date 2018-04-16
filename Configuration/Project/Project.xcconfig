@@ -7,17 +7,7 @@
 // of patent rights can be found in the PATENTS file in the same directory.
 // 
 
-#include "../Base-iOS.xcconfig"
+#include "../Compiler.xcconfig"
 
-// Code Signing
-CODE_SIGN_IDENTITY[sdk=iphoneos*] = iPhone Developer
-
-// Deployment
-DSTROOT = /tmp/$(TARGET_NAME)
+// Install
 SKIP_INSTALL = YES
-
-// Linking
-OTHER_LDFLAGS = -ObjC -all_load -lc++
-
-// Packaging
-WRAPPER_EXTENSION = app
